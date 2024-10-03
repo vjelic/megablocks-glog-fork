@@ -1,5 +1,6 @@
 # Copyright 2024 Databricks
 # SPDX-License-Identifier: Apache-2.0
+# Modifications:  Copyright Advanced Micro Devices, Inc.  SPDX License:  MIT.
 
 """MegaBlocks package setup."""
 

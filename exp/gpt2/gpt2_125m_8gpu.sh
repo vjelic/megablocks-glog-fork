@@ -1,4 +1,5 @@
 #!/bin/bash
+# Modifications:  Copyright Advanced Micro Devices, Inc.  SPDX License:  MIT.
 
 EXP_DIR=$1
 
@@ -106,10 +107,11 @@ PILE_DATASET="\
 1.0 \
 /mount/pile_gpt2/29_text_document"
 
-VOCAB_FILE=/megatron/Stanford-Megatron-LM/tools/gpt2-vocab.json
-MERGE_FILE=/megatron/Stanford-Megatron-LM/tools/gpt2-merges.txt
-DATA_PATH=/megatron/Stanford-Megatron-LM/tools/my-gpt2_text_document
-CHECKPOINT_PATH=/megatron/Stanford-Megatron-LM/checkpoints/
+VOCAB_FILE=<Enter location here>
+MERGE_FILE=<Enter location here>
+DATA_PATH=<Enter location here>
+CHECKPOINT_PATH=<Enter location here>
+
 # NOTE: We don't train for enough tokens for the
 # split to matter.
 DATA_ARGUMENTS="\

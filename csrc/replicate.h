@@ -1,3 +1,5 @@
+// Modifications:  Copyright Advanced Micro Devices, Inc.  SPDX License:  MIT.
+
 #undef CUB_WRAPPED_NAMESPACE
 #define CUB_WRAPPED_NAMESPACE megablocks
 
