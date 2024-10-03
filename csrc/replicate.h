@@ -8,6 +8,12 @@
 #include <c10/cuda/CUDAStream.h>
 #include <torch/extension.h>
 
+#ifndef USE_ROCM
+  #define _LDG(arg) __ldg(arg)
+#else
+  #define _LDG(arg) *(arg)
+#endif
+
 #define CUDA_CALL(code)					    \
   do {                                                      \
     cudaError_t status = code;                              \
@@ -37,11 +43,11 @@ __global__ void __launch_bounds__(kThreadsPerBlock)
   // Load the start/end for this bin.
   int bin_idx = blockIdx.x;
   int start = 0;
-  if (bin_idx > 0) start = __ldg(bins + bin_idx - 1);
-  int end = __ldg(bins + bin_idx);
+  if (bin_idx > 0) start = _LDG(bins + bin_idx - 1);
+  int end = _LDG(bins + bin_idx);
 
   // Load the value to replicate.
-  T value = __ldg((T*)x + bin_idx);
+  T value = _LDG((T*)x + bin_idx);
 
   // Offset to this threadblocks bin and this threads
   // offset within the bin.

@@ -106,12 +106,16 @@ PILE_DATASET="\
 1.0 \
 /mount/pile_gpt2/29_text_document"
 
+VOCAB_FILE=/megatron/Stanford-Megatron-LM/tools/gpt2-vocab.json
+MERGE_FILE=/megatron/Stanford-Megatron-LM/tools/gpt2-merges.txt
+DATA_PATH=/megatron/Stanford-Megatron-LM/tools/my-gpt2_text_document
+CHECKPOINT_PATH=/megatron/Stanford-Megatron-LM/checkpoints/
 # NOTE: We don't train for enough tokens for the
 # split to matter.
 DATA_ARGUMENTS="\
---data-path ${PILE_DATASET} \
---vocab-file /mount/gpt2-vocab.json \
---merge-file /mount/gpt2-merges.txt \
+--data-path ${DATA_PATH} \
+--vocab-file ${VOCAB_FILE} \
+--merge-file ${MERGE_FILE} \
 --make-vocab-size-divisible-by 1024 \
 --split 969,30,1"
 
@@ -119,11 +123,11 @@ COMPUTE_ARGUMENTS="\
 --bf16 \
 --DDP-impl local \
 --no-async-tensor-model-parallel-allreduce \
---use-flash-attn"
+--no-gradient-accumulation-fusion"
 
 CHECKPOINT_ARGUMENTS="\
 --save-interval 2000 \
---save ./${EXP_DIR}"
+--save ${CHECKPOINT_PATH}"
 
 EVALUATION_ARGUMENTS="\
 --eval-iters 100 \
@@ -131,10 +135,10 @@ EVALUATION_ARGUMENTS="\
 --eval-interval 1000"
 
 torchrun ${DISTRIBUTED_ARGUMENTS} \
-       third_party/Megatron-LM/pretrain_gpt.py \
+       /megatron/Stanford-Megatron-LM/pretrain_gpt.py \
        ${MODEL_ARGUMENTS} \
        ${TRAINING_ARGUMENTS} \
        ${DATA_ARGUMENTS} \
        ${COMPUTE_ARGUMENTS} \
        ${CHECKPOINT_ARGUMENTS} \
-       ${EVALUATION_ARGUMENTS} |& tee ./${EXP_DIR}/train.log
+       ${EVALUATION_ARGUMENTS} |& tee ${CHECKPOINT_PATH}/train.log

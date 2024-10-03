@@ -14,6 +14,7 @@ from setuptools import find_packages, setup
 try:
     import torch
     from torch.utils.cpp_extension import CUDA_HOME, BuildExtension, CUDAExtension
+    from torch.utils.hipify import hipify_python
 except ModuleNotFoundError as e:
     raise ModuleNotFoundError("No module named 'torch'. `torch` is required to install `MegaBlocks`.",) from e
 
@@ -21,6 +22,7 @@ _PACKAGE_NAME = 'megablocks'
 _PACKAGE_DIR = 'megablocks'
 _REPO_REAL_PATH = os.path.dirname(os.path.realpath(__file__))
 _PACKAGE_REAL_PATH = os.path.join(_REPO_REAL_PATH, _PACKAGE_DIR)
+
 
 # Read the package version
 # We can't use `.__version__` from the library since it's not installed yet
@@ -67,6 +69,15 @@ install_requires = [
     'stanford-stk==0.7.1',
 ]
 
+gpus = ['gfx90a','gfx940','gfx941','gfx942']
+extra_args = ["--offload-arch=" + g for g in gpus]
+
+maj_ver, min_ver, *_ = torch.__version__.split('.')
+if int(maj_ver) > 1 or (int(maj_ver) == 1 and int(min_ver) >= 5):
+    from torch.utils.cpp_extension import ROCM_HOME
+    is_rocm_pytorch = True if ((torch.version.hip is not None) and (ROCM_HOME is not None)) else False
+
+
 extra_deps = {}
 
 extra_deps['gg'] = [
@@ -91,8 +102,25 @@ extra_deps['all'] = list({dep for key, deps in extra_deps.items() for dep in dep
 cmdclass = {}
 ext_modules = []
 
+
+
+if is_rocm_pytorch:
+    device_capability = ''
+    cmdclass = {'build_ext': BuildExtension}
+
+    nvcc_flags = ['-O3','-U__CUDA_NO_HALF_OPERATORS__', '-U__CUDA_NO_HALF_CONVERSIONS__', "-ftemplate-depth=1024"] + extra_args
+
+    ext_modules.append(
+        CUDAExtension(
+            name='megablocks_ops',
+            sources=['csrc/ops.cu'],
+            include_dirs=["csrc"],
+            extra_compile_args={"cxx": ["-fopenmp"], "nvcc": nvcc_flags}
+            )
+    )
+
 # Only install CUDA extensions if available
-if 'cu' in torch.__version__ and CUDA_HOME is not None:
+elif not is_rocm_pytorch and 'cu' in torch.__version__ and CUDA_HOME is not None:
 
     cmdclass = {'build_ext': BuildExtension}
     nvcc_flags = ['--ptxas-options=-v', '--optimize=2']
@@ -118,6 +146,7 @@ if 'cu' in torch.__version__ and CUDA_HOME is not None:
             },
         ),
     ]
+    
 elif CUDA_HOME is None:
     warnings.warn(
         'Attempted to install CUDA extensions, but CUDA_HOME was None. ' +
@@ -145,3 +174,5 @@ setup(
     python_requires='>=3.9',
     package_data={_PACKAGE_NAME: ['py.typed']},
 )
+
+# python setup.py build
