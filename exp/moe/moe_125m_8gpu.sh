@@ -136,12 +136,17 @@ PILE_DATASET="\
 1.0 \
 ../pile_gpt2/29_text_document"
 
+VOCAB_FILE=<Enter location here>
+MERGE_FILE=<Enter location here>
+DATA_PATH=<Enter location here>
+CHECKPOINT_PATH=<Enter location here>
+
 # NOTE: We don't train for enough tokens for the
 # split to matter.
 DATA_ARGUMENTS="\
---data-path ${PILE_DATASET} \
---vocab-file ../gpt2-vocab.json \
---merge-file ../gpt2-merges.txt \
+--data-path ${DATA_PATH} \
+--vocab-file ${VOCAB_FILE} \
+--merge-file ${MERGE_FILE} \
 --make-vocab-size-divisible-by 1024 \
 --split 969,30,1"
 
@@ -149,7 +154,8 @@ COMPUTE_ARGUMENTS="\
 --fp16 \
 --DDP-impl local \
 --moe-expert-model-parallelism \
---no-async-tensor-model-parallel-allreduce"
+--no-async-tensor-model-parallel-allreduce \
+--no-gradient-accumulation-fusion"
 
 CHECKPOINT_ARGUMENTS="\
 --save-interval 2000 \
@@ -161,7 +167,7 @@ EVALUATION_ARGUMENTS="\
 --eval-interval 1000"
 
 torchrun ${DISTRIBUTED_ARGUMENTS} \
-       third_party/Megatron-LM/pretrain_gpt.py \
+       /root/Stanford-Megatron-LM/pretrain_gpt.py \
        ${MOE_ARGUMENTS} \
        ${MODEL_ARGUMENTS} \
        ${TRAINING_ARGUMENTS} \

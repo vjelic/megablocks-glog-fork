@@ -104,12 +104,17 @@ PILE_DATASET="\
 1.0 \
 ../pile_gpt2/29_text_document"
 
+VOCAB_FILE=<Enter location here>
+MERGE_FILE=<Enter location here>
+DATA_PATH=<Enter location here>
+CHECKPOINT_PATH=<Enter location here>
+
 # NOTE: We don't train for enough tokens for the
 # split to matter.
 DATA_ARGUMENTS="\
---data-path ${PILE_DATASET} \
---vocab-file ../gpt2-vocab.json \
---merge-file ../gpt2-merges.txt \
+--data-path ${DATA_PATH} \
+--vocab-file ${VOCAB_FILE} \
+--merge-file ${MERGE_FILE} \
 --make-vocab-size-divisible-by 1024 \
 --split 969,30,1"
 
