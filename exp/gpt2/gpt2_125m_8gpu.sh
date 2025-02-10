@@ -137,7 +137,7 @@ EVALUATION_ARGUMENTS="\
 --eval-interval 1000"
 
 torchrun ${DISTRIBUTED_ARGUMENTS} \
-       /megatron/Stanford-Megatron-LM/pretrain_gpt.py \
+       third_party/Stanford-Megatron-LM/pretrain_gpt.py \
        ${MODEL_ARGUMENTS} \
        ${TRAINING_ARGUMENTS} \
        ${DATA_ARGUMENTS} \

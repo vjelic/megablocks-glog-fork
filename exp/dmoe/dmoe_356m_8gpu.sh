@@ -163,7 +163,7 @@ EVALUATION_ARGUMENTS="\
 
 
 torchrun ${DISTRIBUTED_ARGUMENTS} \
-       third_party/Megatron-LM/pretrain_gpt.py \
+       third_party/Stanford-Megatron-LM/pretrain_gpt.py \
        ${MOE_ARGUMENTS} \
        ${MODEL_ARGUMENTS} \
        ${TRAINING_ARGUMENTS} \
