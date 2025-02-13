@@ -1,9 +1,17 @@
-FROM nvcr.io/nvidia/pytorch:23.09-py3
+FROM rocm/pytorch:rocm6.3_ubuntu24.04_py3.12_pytorch_release_2.4.0
+WORKDIR /root/
 
-RUN pip install stanford-stk==0.0.6
+# Install the application dependencies
+RUN pip install regex
+RUN pip install nltk
+RUN pip install pybind11
 
-RUN pip install flash-attn
+RUN git clone --recurse-submodules -j8 https://github.com/ROCm/megablocks && \
+    cd megablocks && \
+    ./patch_torch.sh
 
-ENV PYTHONPATH="/mount/megablocks/third_party/Megatron-LM:${PYTHONPATH}"
+RUN cd megablocks/third_party/Stanford-Megatron-LM && \
+    git checkout rocm_6_3_patch && \
+    ./apply_patch.sh
 
-WORKDIR /mount/megablocks
+CMD ["/bin/bash"]
