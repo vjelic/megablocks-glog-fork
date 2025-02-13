@@ -120,7 +120,9 @@ DATA_ARGUMENTS="\
 
 COMPUTE_ARGUMENTS="\
 --fp16 \
---DDP-impl local"
+--DDP-impl local \
+--no-async-tensor-model-parallel-allreduce \
+--no-gradient-accumulation-fusion"
 
 CHECKPOINT_ARGUMENTS="\
 --save-interval 2000 \

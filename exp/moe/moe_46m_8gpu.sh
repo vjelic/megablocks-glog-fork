@@ -154,7 +154,8 @@ COMPUTE_ARGUMENTS="\
 --fp16 \
 --DDP-impl local \
 --moe-expert-model-parallelism \
---no-async-tensor-model-parallel-allreduce"
+--no-async-tensor-model-parallel-allreduce \
+--no-gradient-accumulation-fusion"
 
 CHECKPOINT_ARGUMENTS="\
 --save-interval 2000 \

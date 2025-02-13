@@ -124,7 +124,7 @@ COMPUTE_ARGUMENTS="\
 --bf16 \
 --DDP-impl local \
 --no-async-tensor-model-parallel-allreduce \
---use-flash-attn"
+--no-gradient-accumulation-fusion"
 
 CHECKPOINT_ARGUMENTS="\
 --save-interval 2000 \
