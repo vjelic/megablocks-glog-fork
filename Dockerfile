@@ -8,7 +8,8 @@ RUN pip install pybind11
 
 RUN git clone --recurse-submodules -j8 https://github.com/ROCm/megablocks && \
     cd megablocks && \
-    ./patch_torch.sh
+    ./patch_torch.sh && \
+    python setup.py install
 
 RUN cd megablocks/third_party/Stanford-Megatron-LM && \
     git checkout rocm_6_3_patch && \
