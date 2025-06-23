@@ -3,15 +3,19 @@
 
 import os
 from typing import List, Optional
-
+import torch
 import pytest
-from composer.utils import reproducibility
+import torch.distributed as dist
 
 # Allowed options for pytest.mark.world_size()
 WORLD_SIZE_OPTIONS = (1, 2)
 
 # Enforce deterministic mode before any tests start.
-reproducibility.configure_deterministic_mode()
+def configure_deterministic_mode():
+    torch.use_deterministic_algorithms(True)
+    # You can also set cudnn backend to deterministic and disable benchmarking for reproducibility
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
 
 # Add the path of any pytest fixture files you want to make global
 pytest_plugins = [
@@ -106,3 +110,9 @@ def pytest_addoption(parser: pytest.Parser) -> None:
 def pytest_sessionfinish(session: pytest.Session, exitstatus: int):
     if exitstatus == 5:
         session.exitstatus = 0  # Ignore no-test-ran errors
+
+    if torch.distributed.is_initialized():
+        try:
+            torch.distributed.destroy_process_group()
+        except:
+            pass
