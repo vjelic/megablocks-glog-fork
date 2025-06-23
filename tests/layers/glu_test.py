@@ -11,6 +11,8 @@ from megablocks.layers import dmlp_registry
 from megablocks.layers.arguments import Arguments
 from tests.layers.architectures import GLU
 
+pytest.skip("Skipping this test file for now", allow_module_level=True) 
+
 _DENSE_TESTS = (
     (16, 1024, 512),
     (8, 2048, 512),

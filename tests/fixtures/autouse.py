@@ -5,11 +5,9 @@ import gc
 import logging
 import os
 
-import composer
 import pytest
 import torch
-from composer.devices import DeviceCPU, DeviceGPU
-from composer.utils import dist, reproducibility
+import torch.distributed as dist
 
 
 @pytest.fixture(autouse=True)
@@ -43,34 +41,56 @@ def cleanup_dist():
 
 @pytest.fixture(autouse=True, scope='session')
 def configure_dist(request: pytest.FixtureRequest):
-    # Configure dist globally when the world size is greater than 1,
-    # so individual tests that do not use the trainer
-    # do not need to worry about manually configuring dist.
-
-    if dist.get_world_size() == 1:
-        return
-
-    device = None
-
-    for item in request.session.items:
-        device = DeviceCPU() if item.get_closest_marker('gpu') is None else DeviceGPU()
-        break
-
-    assert device is not None
-
+    """Set up distributed processing for the entire test session."""
+    # Don't override environment variables if they're already set by torchrun
+    if 'RANK' not in os.environ:
+        # Only set defaults if not running with torchrun
+        os.environ['MASTER_ADDR'] = 'localhost'
+        os.environ['MASTER_PORT'] = '12355'
+        os.environ['RANK'] = '0'
+        os.environ['WORLD_SIZE'] = '1'
+    
+    # Get values from environment (respecting torchrun settings)
+    world_size = int(os.environ.get('WORLD_SIZE', '1'))
+    rank = int(os.environ.get('RANK', '0'))
+    
+    print(f"Initializing distributed with world_size={world_size}, rank={rank}")
+    
+    # Initialize distributed processing
     if not dist.is_initialized():
-        dist.initialize_dist(device, timeout=300.0)
+        try:
+            # Try NCCL first if CUDA is available
+            if torch.cuda.is_available():
+                dist.init_process_group(
+                    backend='nccl',
+                    init_method='env://',
+                    world_size=world_size,
+                    rank=rank
+                )
+                print(f"Distributed process group initialized with NCCL backend")
+            else:
+                # Use gloo for CPU-only environments
+                dist.init_process_group(
+                    backend='gloo',
+                    init_method='env://',
+                    world_size=world_size,
+                    rank=rank
+                )
+                print(f"Distributed process group initialized with Gloo backend")
+        except Exception as e:
+            print(f"Failed to initialize distributed process group: {e}")
+            print(f"Environment: RANK={os.environ.get('RANK')}, WORLD_SIZE={os.environ.get('WORLD_SIZE')}, MASTER_ADDR={os.environ.get('MASTER_ADDR')}, MASTER_PORT={os.environ.get('MASTER_PORT')}")
+            raise  # Re-raise to see the full error
+
     # Hold PyTest until all ranks have reached this barrier. Ensure that no rank starts
     # any test before other ranks are ready to start it, which could be a cause of random timeouts
     # (e.g. rank 1 starts the next test while rank 0 is finishing up the previous test).
     dist.barrier()
 
-
 @pytest.fixture(autouse=True)
 def set_log_levels():
     """Ensures all log levels are set to DEBUG."""
     logging.basicConfig()
-    logging.getLogger(composer.__name__).setLevel(logging.DEBUG)
 
 
 @pytest.fixture(autouse=True)
@@ -80,12 +100,16 @@ def seed_all(rank_zero_seed: int, monkeypatch: pytest.MonkeyPatch):
     Make get_random_seed to always return the rank zero seed, and set the random seed before each test to the rank local
     seed.
     """
-    monkeypatch.setattr(
-        reproducibility,
-        'get_random_seed',
-        lambda: rank_zero_seed,
-    )
-    reproducibility.seed_all(rank_zero_seed + dist.get_global_rank())
+
+    def get_random_seed():
+        return rank_zero_seed
+    
+    monkeypatch.setitem(globals(), 'get_random_seed', get_random_seed)
+    rank = dist.get_rank() if dist.is_initialized() else 0
+    local_seed = rank_zero_seed + rank
+    torch.manual_seed(local_seed)
+    torch.use_deterministic_algorithms(True)
+
 
 
 @pytest.fixture(autouse=True)

@@ -4,6 +4,7 @@
 import numpy as np
 import pytest
 import torch
+import torch.distributed as dist
 
 from megablocks import ops
 
