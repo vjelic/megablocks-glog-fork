@@ -10,7 +10,20 @@
           "version": "1.0.0",
           "semanticVersion": "1.0.0",
           "informationUri": "https://www.glog.ai",
-          "rules": [],
+          "rules": [
+            {
+              "id": "glog-4ce80dfd-5940-4435-93a9-dc783eecba3d",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\n\"Exec Usage Detected\" is a vulnerability in Python programming language that arises when the `exec()` function is used. The `exec()` function is a built-in Python function that executes the Python code contained within a string or object. This function can be a security risk because it allows execution of arbitrary Python code, which can lead to code injection attacks if the input is not properly sanitized.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, avoid using the `exec()` function whenever possible. If you must use it, ensure that the input is properly sanitized and validated to prevent code injection attacks. \n\n## Source Code Fix Recommendation\n\nInstead of using `exec()`, consider using safer alternatives such as `getattr()`, `setattr()`, or `hasattr()`. These functions allow you to dynamically access, modify, or check the existence of an attribute on an object, respectively.\n\nHere's an example of how you might replace `exec()` with `getattr()`:\n\n```python\n# Instead of this:\nexec('result = obj.' + attr_name)\n\n# Do this:\nresult = getattr(obj, attr_name)\n```\n\nIn this example, `attr_name` is the name of the attribute you want to access on `obj`. This code will throw an `AttributeError` if `attr_name` is not an attribute of `obj`, which you can catch and handle appropriately.\n\n## Library Dependencies\n\nThe code example does not require any library dependencies to execute properly.\n\n## OWASP Resources\n\n- [OWASP Code Review Guide](https://owasp.org/www-pdf-archive/OWASP_Code_Review_Guide_v2.pdf)\n\n## Common Weakness Enumeration (CWE)\n\n- [CWE-94: Improper Control of Generation of Code ('Code Injection')](https://cwe.mitre.org/data/definitions/94.html)"
+              },
+              "properties": {
+                "tags": [
+                  "B102"
+                ]
+              }
+            }
+          ],
           "language": "en-US",
           "contents": [
             "localizedData",
@@ -20,7 +33,45 @@
         }
       },
       "language": "en-US",
-      "results": [],
+      "results": [
+        {
+          "ruleId": "glog-4ce80dfd-5940-4435-93a9-dc783eecba3d",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Exec Usage Detected"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "setup.py"
+                },
+                "region": {
+                  "startLine": 35,
+                  "startColumn": 5,
+                  "endLine": 35,
+                  "endColumn": 51,
+                  "snippet": {
+                    "text": "    exec(content, version_globals, version_locals)\n"
+                  }
+                },
+                "contextRegion": {
+                  "startLine": 34,
+                  "endLine": 36,
+                  "snippet": {
+                    "text": "    content = f.read()\n    exec(content, version_globals, version_locals)\n    repo_version = version_locals['__version__']\n"
+                  }
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_severity": "MEDIUM",
+            "issue_confidence": "HIGH"
+          }
+        }
+      ],
       "newlineSequences": [
         "\r\n",
         "\n"
