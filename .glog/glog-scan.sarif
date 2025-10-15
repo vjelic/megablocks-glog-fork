@@ -12,30 +12,6 @@
           "informationUri": "https://www.glog.ai",
           "rules": [
             {
-              "id": "871574a8-cb6c-337d-8aa7-a82d26471049",
-              "name": "resources.rules.missing-pip-no-cache-dir",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
-              },
-              "fullDescription": {
-                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "note"
-              },
-              "help": {
-                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3042](https://github.com/hadolint/hadolint/wiki/DL3042)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.missing-pip-no-cache-dir"
-                ]
-              }
-            },
-            {
               "id": "0f8b65e2-4591-3b07-99ef-cf91644b4c5a",
               "name": "resources.rules.missing-image-version",
               "shortDescription": {
@@ -56,30 +32,6 @@
                 "precision": "very-high",
                 "tags": [
                   "resources.rules.missing-image-version"
-                ]
-              }
-            },
-            {
-              "id": "1296a0e8-c99d-3065-b3e9-3f54de461e51",
-              "name": "resources.rules.missing-pip-no-cache-dir",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
-              },
-              "fullDescription": {
-                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "note"
-              },
-              "help": {
-                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3042](https://github.com/hadolint/hadolint/wiki/DL3042)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.missing-pip-no-cache-dir"
                 ]
               }
             },
@@ -108,7 +60,55 @@
               }
             },
             {
-              "id": "69438343-1120-39a8-a707-293598df2506",
+              "id": "871574a8-cb6c-337d-8aa7-a82d26471049",
+              "name": "resources.rules.missing-pip-no-cache-dir",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
+              },
+              "fullDescription": {
+                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "note"
+              },
+              "help": {
+                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3042](https://github.com/hadolint/hadolint/wiki/DL3042)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.missing-pip-no-cache-dir"
+                ]
+              }
+            },
+            {
+              "id": "1296a0e8-c99d-3065-b3e9-3f54de461e51",
+              "name": "resources.rules.missing-pip-no-cache-dir",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
+              },
+              "fullDescription": {
+                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "note"
+              },
+              "help": {
+                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3042](https://github.com/hadolint/hadolint/wiki/DL3042)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.missing-pip-no-cache-dir"
+                ]
+              }
+            },
+            {
+              "id": "1dabc387-4989-357a-a71b-75124227f0a1",
               "name": "resources.rules.use-workdir",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.use-workdir"
@@ -132,31 +132,7 @@
               }
             },
             {
-              "id": "6309c49c-ef6c-3c44-b46f-28b961fed06a",
-              "name": "resources.rules.raptor-signed-unsigned-conversion",
-              "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.raptor-signed-unsigned-conversion"
-              },
-              "fullDescription": {
-                "text": "The software uses a signed primitive and performs a cast to an unsigned primitive, or uses an unsigned primitive and performs a cast to a signed primitive, which can produce an unexpected value. When the result of a function is to be used as a size parameter, using negative return values can have unexpected results. Although less frequent an issue, unsigned-to-signed conversion can be  the precursor to buffer underwrite conditions. Buffer underwrites  occur frequently when large unsigned values are cast to signed values,  and then used as indexes into a buffer or for pointer arithmetic."
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "warning"
-              },
-              "help": {
-                "text": "The software uses a signed primitive and performs a cast to an unsigned primitive, or uses an unsigned primitive and performs a cast to a signed primitive, which can produce an unexpected value. When the result of a function is to be used as a size parameter, using negative return values can have unexpected results. Although less frequent an issue, unsigned-to-signed conversion can be  the precursor to buffer underwrite conditions. Buffer underwrites  occur frequently when large unsigned values are cast to signed values,  and then used as indexes into a buffer or for pointer arithmetic.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "The software uses a signed primitive and performs a cast to an unsigned primitive, or uses an unsigned primitive and performs a cast to a signed primitive, which can produce an unexpected value. When the result of a function is to be used as a size parameter, using negative return values can have unexpected results. Although less frequent an issue, unsigned-to-signed conversion can be  the precursor to buffer underwrite conditions. Buffer underwrites  occur frequently when large unsigned values are cast to signed values,  and then used as indexes into a buffer or for pointer arithmetic.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://cwe.mitre.org/data/definitions/195](https://cwe.mitre.org/data/definitions/195)\n - [https://cwe.mitre.org/data/definitions/196](https://cwe.mitre.org/data/definitions/196)\n - [https://cwe.mitre.org/data/definitions/194](https://cwe.mitre.org/data/definitions/194)\n - [https://cwe.mitre.org/data/definitions/191](https://cwe.mitre.org/data/definitions/191)\n - [https://cwe.mitre.org/data/definitions/681](https://cwe.mitre.org/data/definitions/681)\n - [https://cwe.mitre.org/data/definitions/789](https://cwe.mitre.org/data/definitions/789)\n - [https://g.co/kgs/PCHQjJ](https://g.co/kgs/PCHQjJ)\n - [https://github.com/struct/mms](https://github.com/struct/mms)\n - [https://www.sei.cmu.edu/downloads/sei-cert-c-coding-standard-2016-v01.pdf](https://www.sei.cmu.edu/downloads/sei-cert-c-coding-standard-2016-v01.pdf)\n - [http://www.phrack.org/issues/60/10.html#article](http://www.phrack.org/issues/60/10.html#article)\n - [https://docs.microsoft.com/en-us/cpp/sanitizers/asan-error-examples](https://docs.microsoft.com/en-us/cpp/sanitizers/asan-error-examples)\n"
-              },
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "resources.rules.raptor-signed-unsigned-conversion"
-                ]
-              }
-            },
-            {
-              "id": "1dabc387-4989-357a-a71b-75124227f0a1",
+              "id": "69438343-1120-39a8-a707-293598df2506",
               "name": "resources.rules.use-workdir",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.use-workdir"
@@ -205,7 +181,7 @@
               }
             },
             {
-              "id": "2ca478ee-a01e-3eb1-9d3d-1bf6dc31205f",
+              "id": "6309c49c-ef6c-3c44-b46f-28b961fed06a",
               "name": "resources.rules.raptor-signed-unsigned-conversion",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.raptor-signed-unsigned-conversion"
@@ -278,6 +254,30 @@
               }
             },
             {
+              "id": "2ca478ee-a01e-3eb1-9d3d-1bf6dc31205f",
+              "name": "resources.rules.raptor-signed-unsigned-conversion",
+              "shortDescription": {
+                "text": "Opengrep Finding: resources.rules.raptor-signed-unsigned-conversion"
+              },
+              "fullDescription": {
+                "text": "The software uses a signed primitive and performs a cast to an unsigned primitive, or uses an unsigned primitive and performs a cast to a signed primitive, which can produce an unexpected value. When the result of a function is to be used as a size parameter, using negative return values can have unexpected results. Although less frequent an issue, unsigned-to-signed conversion can be  the precursor to buffer underwrite conditions. Buffer underwrites  occur frequently when large unsigned values are cast to signed values,  and then used as indexes into a buffer or for pointer arithmetic."
+              },
+              "defaultConfiguration": {
+                "enabled": true,
+                "level": "warning"
+              },
+              "help": {
+                "text": "The software uses a signed primitive and performs a cast to an unsigned primitive, or uses an unsigned primitive and performs a cast to a signed primitive, which can produce an unexpected value. When the result of a function is to be used as a size parameter, using negative return values can have unexpected results. Although less frequent an issue, unsigned-to-signed conversion can be  the precursor to buffer underwrite conditions. Buffer underwrites  occur frequently when large unsigned values are cast to signed values,  and then used as indexes into a buffer or for pointer arithmetic.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "The software uses a signed primitive and performs a cast to an unsigned primitive, or uses an unsigned primitive and performs a cast to a signed primitive, which can produce an unexpected value. When the result of a function is to be used as a size parameter, using negative return values can have unexpected results. Although less frequent an issue, unsigned-to-signed conversion can be  the precursor to buffer underwrite conditions. Buffer underwrites  occur frequently when large unsigned values are cast to signed values,  and then used as indexes into a buffer or for pointer arithmetic.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://cwe.mitre.org/data/definitions/195](https://cwe.mitre.org/data/definitions/195)\n - [https://cwe.mitre.org/data/definitions/196](https://cwe.mitre.org/data/definitions/196)\n - [https://cwe.mitre.org/data/definitions/194](https://cwe.mitre.org/data/definitions/194)\n - [https://cwe.mitre.org/data/definitions/191](https://cwe.mitre.org/data/definitions/191)\n - [https://cwe.mitre.org/data/definitions/681](https://cwe.mitre.org/data/definitions/681)\n - [https://cwe.mitre.org/data/definitions/789](https://cwe.mitre.org/data/definitions/789)\n - [https://g.co/kgs/PCHQjJ](https://g.co/kgs/PCHQjJ)\n - [https://github.com/struct/mms](https://github.com/struct/mms)\n - [https://www.sei.cmu.edu/downloads/sei-cert-c-coding-standard-2016-v01.pdf](https://www.sei.cmu.edu/downloads/sei-cert-c-coding-standard-2016-v01.pdf)\n - [http://www.phrack.org/issues/60/10.html#article](http://www.phrack.org/issues/60/10.html#article)\n - [https://docs.microsoft.com/en-us/cpp/sanitizers/asan-error-examples](https://docs.microsoft.com/en-us/cpp/sanitizers/asan-error-examples)\n"
+              },
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "resources.rules.raptor-signed-unsigned-conversion"
+                ]
+              }
+            },
+            {
               "id": "50b62dd5-0ebe-3d03-9b9d-66203bd644bb",
               "name": "resources.rules.raptor-signed-unsigned-conversion",
               "shortDescription": {
@@ -313,37 +313,6 @@
       "language": "en-US",
       "results": [
         {
-          "ruleId": "871574a8-cb6c-337d-8aa7-a82d26471049",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "This 'pip install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "Dockerfile",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 7,
-                  "startColumn": 1,
-                  "endLine": 7,
-                  "endColumn": 25,
-                  "snippet": {
-                    "text": "RUN pip install pybind11"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "b2d644dbb92b38a42de4fc0a3dffffec3c37ac107b80fb7dcc74cac579515da65449ca35204de682f6c4bcb4b48c0769485d6dc6cf08538c6ca4e8a53ce17b1c_0"
-          },
-          "properties": {}
-        },
-        {
           "ruleId": "0f8b65e2-4591-3b07-99ef-cf91644b4c5a",
           "kind": "fail",
           "level": "warning",
@@ -371,37 +340,6 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "bf01890fc9df1e916e7ebd07720a9d3cb5c6d1514174e80408670b71420522fab69cc63a0d17e946abcb98db8fec0baeeab65d83841d9847616aa58ae55ab3ec_0"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "1296a0e8-c99d-3065-b3e9-3f54de461e51",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "This 'pip install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "Dockerfile",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 6,
-                  "startColumn": 1,
-                  "endLine": 6,
-                  "endColumn": 21,
-                  "snippet": {
-                    "text": "RUN pip install nltk"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "d79db4ea59a24a383ddab3498d70f63e72dabeb0575ade6c65490533b2dcb028931807c94d994609257ea0c9e5547d9d68caee974710fa95c652b214125ab750_0"
           },
           "properties": {}
         },
@@ -437,11 +375,11 @@
           "properties": {}
         },
         {
-          "ruleId": "69438343-1120-39a8-a707-293598df2506",
+          "ruleId": "1296a0e8-c99d-3065-b3e9-3f54de461e51",
           "kind": "fail",
           "level": "warning",
           "message": {
-            "text": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner."
+            "text": "This 'pip install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
           },
           "locations": [
             {
@@ -451,50 +389,50 @@
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 14,
+                  "startLine": 6,
                   "startColumn": 1,
-                  "endLine": 14,
-                  "endColumn": 7,
+                  "endLine": 6,
+                  "endColumn": 21,
                   "snippet": {
-                    "text": "RUN cd megablocks/third_party/Stanford-Megatron-LM && \\"
+                    "text": "RUN pip install nltk"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "8d367e50e35761b926f24b347a3d048bb3d45a6c6ee8ccc7b4ff393ac2c97727d657193320b7c89a39455a227b43d9d617dd00cab4ff4da6b36962a79493dcf2_1"
+            "matchBasedId/v1": "d79db4ea59a24a383ddab3498d70f63e72dabeb0575ade6c65490533b2dcb028931807c94d994609257ea0c9e5547d9d68caee974710fa95c652b214125ab750_0"
           },
           "properties": {}
         },
         {
-          "ruleId": "6309c49c-ef6c-3c44-b46f-28b961fed06a",
+          "ruleId": "871574a8-cb6c-337d-8aa7-a82d26471049",
           "kind": "fail",
           "level": "warning",
           "message": {
-            "text": "The software uses a signed primitive and performs a cast to an unsigned primitive, or uses an unsigned primitive and performs a cast to a signed primitive, which can produce an unexpected value. When the result of a function is to be used as a size parameter, using negative return values can have unexpected results. Although less frequent an issue, unsigned-to-signed conversion can be  the precursor to buffer underwrite conditions. Buffer underwrites  occur frequently when large unsigned values are cast to signed values,  and then used as indexes into a buffer or for pointer arithmetic."
+            "text": "This 'pip install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
           },
           "locations": [
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "csrc/cumsum.h",
+                  "uri": "Dockerfile",
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 68,
-                  "startColumn": 10,
-                  "endLine": 68,
-                  "endColumn": 30,
+                  "startLine": 7,
+                  "startColumn": 1,
+                  "endLine": 7,
+                  "endColumn": 25,
                   "snippet": {
-                    "text": "  size_t scratchpad_bytes = 0;"
+                    "text": "RUN pip install pybind11"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "2fb2f764e8a02f2b9e1b60c8caa15eaeb518876819b3710fe96585ef915177fe1473e5078c00269c5584530e17fe01173f260accf3d3e3c655440e22163220b3_0"
+            "matchBasedId/v1": "b2d644dbb92b38a42de4fc0a3dffffec3c37ac107b80fb7dcc74cac579515da65449ca35204de682f6c4bcb4b48c0769485d6dc6cf08538c6ca4e8a53ce17b1c_0"
           },
           "properties": {}
         },
@@ -530,6 +468,37 @@
           "properties": {}
         },
         {
+          "ruleId": "69438343-1120-39a8-a707-293598df2506",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Use 'WORKDIR' instead of 'RUN cd ...'. Using 'RUN cd ...' may not work as expected in a conatiner."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Dockerfile",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 1,
+                  "endLine": 14,
+                  "endColumn": 7,
+                  "snippet": {
+                    "text": "RUN cd megablocks/third_party/Stanford-Megatron-LM && \\"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "8d367e50e35761b926f24b347a3d048bb3d45a6c6ee8ccc7b4ff393ac2c97727d657193320b7c89a39455a227b43d9d617dd00cab4ff4da6b36962a79493dcf2_1"
+          },
+          "properties": {}
+        },
+        {
           "ruleId": "86083dcc-ec96-3464-91ce-8776c32b96eb",
           "kind": "fail",
           "level": "warning",
@@ -561,7 +530,7 @@
           "properties": {}
         },
         {
-          "ruleId": "2ca478ee-a01e-3eb1-9d3d-1bf6dc31205f",
+          "ruleId": "6309c49c-ef6c-3c44-b46f-28b961fed06a",
           "kind": "fail",
           "level": "warning",
           "message": {
@@ -571,13 +540,13 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "csrc/histogram.h",
+                  "uri": "csrc/cumsum.h",
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 31,
+                  "startLine": 68,
                   "startColumn": 10,
-                  "endLine": 31,
+                  "endLine": 68,
                   "endColumn": 30,
                   "snippet": {
                     "text": "  size_t scratchpad_bytes = 0;"
@@ -587,7 +556,7 @@
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "f8589cbc2d03d53b365bfa543c8f8a37a5d61d7123a864c179aa86d8fa3fc8779e5e8ecc3c70f302e9aff4d60a55759ebabe81722e0c56c6110611b1b917a8ce_0"
+            "matchBasedId/v1": "2fb2f764e8a02f2b9e1b60c8caa15eaeb518876819b3710fe96585ef915177fe1473e5078c00269c5584530e17fe01173f260accf3d3e3c655440e22163220b3_0"
           },
           "properties": {}
         },
@@ -650,6 +619,37 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "46eb010577bfb1d814c0d4a0431dc2dc8b74e8c88aab7670211980ec41200cd524ecdf4a7ef9be79aff24e0f6d8d01cbd92ebe9c4acc18f1ba95c724cef219aa_0"
+          },
+          "properties": {}
+        },
+        {
+          "ruleId": "2ca478ee-a01e-3eb1-9d3d-1bf6dc31205f",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "The software uses a signed primitive and performs a cast to an unsigned primitive, or uses an unsigned primitive and performs a cast to a signed primitive, which can produce an unexpected value. When the result of a function is to be used as a size parameter, using negative return values can have unexpected results. Although less frequent an issue, unsigned-to-signed conversion can be  the precursor to buffer underwrite conditions. Buffer underwrites  occur frequently when large unsigned values are cast to signed values,  and then used as indexes into a buffer or for pointer arithmetic."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "csrc/histogram.h",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 31,
+                  "startColumn": 10,
+                  "endLine": 31,
+                  "endColumn": 30,
+                  "snippet": {
+                    "text": "  size_t scratchpad_bytes = 0;"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "f8589cbc2d03d53b365bfa543c8f8a37a5d61d7123a864c179aa86d8fa3fc8779e5e8ecc3c70f302e9aff4d60a55759ebabe81722e0c56c6110611b1b917a8ce_0"
           },
           "properties": {}
         },
