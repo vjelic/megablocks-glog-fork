@@ -12,26 +12,26 @@
           "informationUri": "https://www.glog.ai",
           "rules": [
             {
-              "id": "0f8b65e2-4591-3b07-99ef-cf91644b4c5a",
-              "name": "resources.rules.missing-image-version",
+              "id": "871574a8-cb6c-337d-8aa7-a82d26471049",
+              "name": "resources.rules.missing-pip-no-cache-dir",
               "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.missing-image-version"
+                "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
               },
               "fullDescription": {
-                "text": "Images should be tagged with an explicit version to produce deterministic container images."
+                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
               },
               "defaultConfiguration": {
                 "enabled": true,
-                "level": "warning"
+                "level": "note"
               },
               "help": {
-                "text": "Images should be tagged with an explicit version to produce deterministic container images.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "Images should be tagged with an explicit version to produce deterministic container images.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3006](https://github.com/hadolint/hadolint/wiki/DL3006)\n"
+                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3042](https://github.com/hadolint/hadolint/wiki/DL3042)\n"
               },
               "properties": {
                 "precision": "very-high",
                 "tags": [
-                  "resources.rules.missing-image-version"
+                  "resources.rules.missing-pip-no-cache-dir"
                 ]
               }
             },
@@ -60,26 +60,26 @@
               }
             },
             {
-              "id": "871574a8-cb6c-337d-8aa7-a82d26471049",
-              "name": "resources.rules.missing-pip-no-cache-dir",
+              "id": "0f8b65e2-4591-3b07-99ef-cf91644b4c5a",
+              "name": "resources.rules.missing-image-version",
               "shortDescription": {
-                "text": "Opengrep Finding: resources.rules.missing-pip-no-cache-dir"
+                "text": "Opengrep Finding: resources.rules.missing-image-version"
               },
               "fullDescription": {
-                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
+                "text": "Images should be tagged with an explicit version to produce deterministic container images."
               },
               "defaultConfiguration": {
                 "enabled": true,
-                "level": "note"
+                "level": "warning"
               },
               "help": {
-                "text": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
-                "markdown": "This '$PIP install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3042](https://github.com/hadolint/hadolint/wiki/DL3042)\n"
+                "text": "Images should be tagged with an explicit version to produce deterministic container images.\n💎 Enable cross-file analysis and Pro rules for free at sg.run/pro",
+                "markdown": "Images should be tagged with an explicit version to produce deterministic container images.\n\n#### 💎 Enable cross-file analysis and Pro rules for free at <a href='https://sg.run/pro'>sg.run/pro</a>\n\n<b>References:</b>\n - [https://github.com/hadolint/hadolint/wiki/DL3006](https://github.com/hadolint/hadolint/wiki/DL3006)\n"
               },
               "properties": {
                 "precision": "very-high",
                 "tags": [
-                  "resources.rules.missing-pip-no-cache-dir"
+                  "resources.rules.missing-image-version"
                 ]
               }
             },
@@ -230,7 +230,7 @@
               }
             },
             {
-              "id": "15506a67-627a-3487-9439-b44883e1bc59",
+              "id": "50b62dd5-0ebe-3d03-9b9d-66203bd644bb",
               "name": "resources.rules.raptor-signed-unsigned-conversion",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.raptor-signed-unsigned-conversion"
@@ -278,7 +278,7 @@
               }
             },
             {
-              "id": "50b62dd5-0ebe-3d03-9b9d-66203bd644bb",
+              "id": "15506a67-627a-3487-9439-b44883e1bc59",
               "name": "resources.rules.raptor-signed-unsigned-conversion",
               "shortDescription": {
                 "text": "Opengrep Finding: resources.rules.raptor-signed-unsigned-conversion"
@@ -313,11 +313,11 @@
       "language": "en-US",
       "results": [
         {
-          "ruleId": "0f8b65e2-4591-3b07-99ef-cf91644b4c5a",
+          "ruleId": "871574a8-cb6c-337d-8aa7-a82d26471049",
           "kind": "fail",
           "level": "warning",
           "message": {
-            "text": "Images should be tagged with an explicit version to produce deterministic container images."
+            "text": "This 'pip install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
           },
           "locations": [
             {
@@ -327,19 +327,19 @@
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 1,
+                  "startLine": 7,
                   "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 10,
+                  "endLine": 7,
+                  "endColumn": 25,
                   "snippet": {
-                    "text": "FROM rocm/pytorch:rocm6.3_ubuntu24.04_py3.12_pytorch_release_2.4.0"
+                    "text": "RUN pip install pybind11"
                   }
                 }
               }
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "bf01890fc9df1e916e7ebd07720a9d3cb5c6d1514174e80408670b71420522fab69cc63a0d17e946abcb98db8fec0baeeab65d83841d9847616aa58ae55ab3ec_0"
+            "matchBasedId/v1": "b2d644dbb92b38a42de4fc0a3dffffec3c37ac107b80fb7dcc74cac579515da65449ca35204de682f6c4bcb4b48c0769485d6dc6cf08538c6ca4e8a53ce17b1c_0"
           },
           "properties": {}
         },
@@ -375,6 +375,37 @@
           "properties": {}
         },
         {
+          "ruleId": "0f8b65e2-4591-3b07-99ef-cf91644b4c5a",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Images should be tagged with an explicit version to produce deterministic container images."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Dockerfile",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 10,
+                  "snippet": {
+                    "text": "FROM rocm/pytorch:rocm6.3_ubuntu24.04_py3.12_pytorch_release_2.4.0"
+                  }
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "bf01890fc9df1e916e7ebd07720a9d3cb5c6d1514174e80408670b71420522fab69cc63a0d17e946abcb98db8fec0baeeab65d83841d9847616aa58ae55ab3ec_0"
+          },
+          "properties": {}
+        },
+        {
           "ruleId": "1296a0e8-c99d-3065-b3e9-3f54de461e51",
           "kind": "fail",
           "level": "warning",
@@ -402,37 +433,6 @@
           ],
           "fingerprints": {
             "matchBasedId/v1": "d79db4ea59a24a383ddab3498d70f63e72dabeb0575ade6c65490533b2dcb028931807c94d994609257ea0c9e5547d9d68caee974710fa95c652b214125ab750_0"
-          },
-          "properties": {}
-        },
-        {
-          "ruleId": "871574a8-cb6c-337d-8aa7-a82d26471049",
-          "kind": "fail",
-          "level": "warning",
-          "message": {
-            "text": "This 'pip install' is missing '--no-cache-dir'. This flag prevents\npackage archives from being kept around, thereby reducing image size.\nAdd '--no-cache-dir'.\n"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "Dockerfile",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "startLine": 7,
-                  "startColumn": 1,
-                  "endLine": 7,
-                  "endColumn": 25,
-                  "snippet": {
-                    "text": "RUN pip install pybind11"
-                  }
-                }
-              }
-            }
-          ],
-          "fingerprints": {
-            "matchBasedId/v1": "b2d644dbb92b38a42de4fc0a3dffffec3c37ac107b80fb7dcc74cac579515da65449ca35204de682f6c4bcb4b48c0769485d6dc6cf08538c6ca4e8a53ce17b1c_0"
           },
           "properties": {}
         },
@@ -592,7 +592,7 @@
           "properties": {}
         },
         {
-          "ruleId": "15506a67-627a-3487-9439-b44883e1bc59",
+          "ruleId": "50b62dd5-0ebe-3d03-9b9d-66203bd644bb",
           "kind": "fail",
           "level": "warning",
           "message": {
@@ -602,13 +602,13 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "csrc/replicate.h",
+                  "uri": "csrc/sort.h",
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 105,
+                  "startLine": 28,
                   "startColumn": 10,
-                  "endLine": 105,
+                  "endLine": 28,
                   "endColumn": 30,
                   "snippet": {
                     "text": "  size_t scratchpad_bytes = 0;"
@@ -618,7 +618,7 @@
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "46eb010577bfb1d814c0d4a0431dc2dc8b74e8c88aab7670211980ec41200cd524ecdf4a7ef9be79aff24e0f6d8d01cbd92ebe9c4acc18f1ba95c724cef219aa_0"
+            "matchBasedId/v1": "c4a9661b00189547fd9e9d7c060068eaf6f061bcfd5782900b1dd3b6522c549ba89bf788921835a65c9a213ea80391265d22e14dd230995d21a6c25e5842d97f_0"
           },
           "properties": {}
         },
@@ -654,7 +654,7 @@
           "properties": {}
         },
         {
-          "ruleId": "50b62dd5-0ebe-3d03-9b9d-66203bd644bb",
+          "ruleId": "15506a67-627a-3487-9439-b44883e1bc59",
           "kind": "fail",
           "level": "warning",
           "message": {
@@ -664,13 +664,13 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "csrc/sort.h",
+                  "uri": "csrc/replicate.h",
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "startLine": 28,
+                  "startLine": 105,
                   "startColumn": 10,
-                  "endLine": 28,
+                  "endLine": 105,
                   "endColumn": 30,
                   "snippet": {
                     "text": "  size_t scratchpad_bytes = 0;"
@@ -680,7 +680,7 @@
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "c4a9661b00189547fd9e9d7c060068eaf6f061bcfd5782900b1dd3b6522c549ba89bf788921835a65c9a213ea80391265d22e14dd230995d21a6c25e5842d97f_0"
+            "matchBasedId/v1": "46eb010577bfb1d814c0d4a0431dc2dc8b74e8c88aab7670211980ec41200cd524ecdf4a7ef9be79aff24e0f6d8d01cbd92ebe9c4acc18f1ba95c724cef219aa_0"
           },
           "properties": {}
         }
